@@ -947,8 +947,8 @@ class App(CTk):
 
         
         def load(self):
-            row = 0
-            col = 0
+            self.rowl = 0
+            self.coll = 0
             for product in self.products:
                 def load1(self):
                     product_btn = CTkButton(
@@ -966,11 +966,11 @@ class App(CTk):
                         font=CTkFont(family="Nunito", size=16, weight="normal"),
                         command=lambda p=product: self.send_product_serial_data(p),
                     )
-                    product_btn.grid(row=row, column=col, padx=7, pady=7, sticky="nsew")
-                    col += 1
-                    if col >= 7:
-                        col = 0
-                        row += 1
+                    product_btn.grid(row=self.rowl, column=self.coll, padx=7, pady=7, sticky="nsew")
+                    self.coll += 1
+                    if self.coll >= 7:
+                        self.coll = 0
+                        self.rowl += 1
                 threading.Thread(target=load1(self)).start()
         threading.Thread(target=load(self)).start()
 
