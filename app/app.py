@@ -945,9 +945,10 @@ class App(CTk):
         for col in range(7):
             self.all_products_frame.grid_columnconfigure(col, weight=0)
 
-        row = 0
-        col = 0
+        
         def load(self):
+            row = 0
+            col = 0
             for product in self.products:
                 product_btn = CTkButton(
                     master=self.all_products_frame,
@@ -982,9 +983,10 @@ class App(CTk):
             return
         for col in range(7):
             self.search_product_frame.grid_columnconfigure(col, weight=0)
-        row = 0
-        col = 0
+        
         def display(self):
+            row = 0
+            col = 0
             for product in matching_products:
                 product_btn = CTkButton(
                     master=self.search_product_frame,
@@ -1024,9 +1026,10 @@ class App(CTk):
             if filter_text.lower() in ing["ING_Name"].lower()
         ]
         self.checkboxes = []
-        row = 0
-        col = 0
+        
         def display(self):
+            row = 0
+            col = 0
             for ing in filtered_ingredients:
                 ing_id = ing["ING_ID"]
                 ing_name = ing["ING_Name"]
