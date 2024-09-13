@@ -950,26 +950,28 @@ class App(CTk):
             row = 0
             col = 0
             for product in self.products:
-                product_btn = CTkButton(
-                    master=self.all_products_frame,
-                    text=product["PName"],
-                    image=CTkImage(Image.open(product["PImage"]), size=(200, 200)),
-                    compound="top",
-                    width=215,
-                    height=250,
-                    border_width=0,
-                    border_spacing=0,
-                    fg_color=("#000000", "#000000"),
-                    bg_color=("#111111", "#111111"),
-                    hover_color=("#8f0c04", "#8f0c04"),
-                    font=CTkFont(family="Nunito", size=16, weight="normal"),
-                    command=lambda p=product: self.send_product_serial_data(p),
-                )
-                product_btn.grid(row=row, column=col, padx=7, pady=7, sticky="nsew")
-                col += 1
-                if col >= 7:
-                    col = 0
-                    row += 1
+                def load1(self):
+                    product_btn = CTkButton(
+                        master=self.all_products_frame,
+                        text=product["PName"],
+                        image=CTkImage(Image.open(product["PImage"]), size=(200, 200)),
+                        compound="top",
+                        width=215,
+                        height=250,
+                        border_width=0,
+                        border_spacing=0,
+                        fg_color=("#000000", "#000000"),
+                        bg_color=("#111111", "#111111"),
+                        hover_color=("#8f0c04", "#8f0c04"),
+                        font=CTkFont(family="Nunito", size=16, weight="normal"),
+                        command=lambda p=product: self.send_product_serial_data(p),
+                    )
+                    product_btn.grid(row=row, column=col, padx=7, pady=7, sticky="nsew")
+                    col += 1
+                    if col >= 7:
+                        col = 0
+                        row += 1
+                threading.Thread(target=load1(self)).start()
         threading.Thread(target=load(self)).start()
 
     def display_matching_products(self):
