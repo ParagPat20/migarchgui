@@ -1031,37 +1031,39 @@ class App(CTk):
             ]
             self.checkboxes = []
         
-            row = 0
-            col = 0
+            self.rowd = 0
+            self.cold = 0
             for ing in filtered_ingredients:
-                ing_id = ing["ING_ID"]
-                ing_name = ing["ING_Name"]
-                state = self.selected_ingredients.get(ing_id, False)
-                checkbox = CTkCheckBox(
-                    master=self.box3,
-                    text=ing_name,
-                    width=200,
-                    height=40,
-                    checkbox_width=40,
-                    checkbox_height=40,
-                    corner_radius=3,
-                    border_width=1,
-                    hover_color=("#8f0c04", "#8f0c04"),
-                    fg_color=("#e8000f", "#e8000f"),
-                    font=CTkFont(family="Nunito", size=16, weight="normal"),
-                    command=self.update_selected_count,
-                    text_color=("#ffffff", "#ffffff"),
-                )
-                checkbox.grid(row=row, column=col, padx=5, pady=5)
-                if state:
-                    checkbox.select()
-                else:
-                    checkbox.deselect()
-                self.checkboxes.append((ing_id, checkbox))
-                col += 1
-                if col == 5:
-                    col = 0
-                    row += 1
+                def dataload(self):
+                    ing_id = ing["ING_ID"]
+                    ing_name = ing["ING_Name"]
+                    state = self.selected_ingredients.get(ing_id, False)
+                    checkbox = CTkCheckBox(
+                        master=self.box3,
+                        text=ing_name,
+                        width=200,
+                        height=40,
+                        checkbox_width=40,
+                        checkbox_height=40,
+                        corner_radius=3,
+                        border_width=1,
+                        hover_color=("#8f0c04", "#8f0c04"),
+                        fg_color=("#e8000f", "#e8000f"),
+                        font=CTkFont(family="Nunito", size=16, weight="normal"),
+                        command=self.update_selected_count,
+                        text_color=("#ffffff", "#ffffff"),
+                    )
+                    checkbox.grid(row=self.rowd, column=self.cold, padx=5, pady=5)
+                    if state:
+                        checkbox.select()
+                    else:
+                        checkbox.deselect()
+                    self.checkboxes.append((ing_id, checkbox))
+                    self.cold += 1
+                    if self.cold == 5:
+                        self.cold = 0
+                        self.rowd += 1
+                threading.Thread(target=dataload(self)).start()
         threading.Thread(target=display(self)).start()
 
     
