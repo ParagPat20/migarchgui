@@ -1,0 +1,87 @@
+[
+  {
+    "PID": 1,
+    "PName": "Aperol Spritz",
+    "PImage": "img/product_1.png",
+    "PCat": "Cocktail",
+    "PDesc": "The Aperol Spritz is one of the most popular aperitif cocktails in Italy. Just Aperol, prosecco and club soda, it's as easy to make as it is to drink.",
+    "PHtm": "Add lime wedgesugar to the old fashioned glass\nCrush lime wedgesugar with muddler\nFill up the glass with crushed ice\nPour cachaca into the glass\nStir together\nGarnish with lime wedge",
+    "PIng": [
+      {
+        "ING_ID": "12",
+        "ING_Name": "Aperol",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "33",
+        "ING_Name": "Club Soda",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "66",
+        "ING_Name": "Prosecco",
+        "ING_Type": "Main"
+      }
+    ]
+  },
+  {
+    "PID": 2,
+    "PName": "Caipirinha",
+    "PImage": "img/product_2.png",
+    "PCat": "Cocktail",
+    "PDesc": "The classic Caipirinha cocktail features cacha\u00e7a, lime and sugar. Muddle one up, and you'll be transported in a snap to a beach in Rio.",
+    "PHtm": "Add lime wedgesugar to the old fashioned glass\nCrush lime wedgesugar with muddler\nFill up the glass with crushed ice\nPour cachaca into the glass\nStir together\nGarnish with lime wedge",
+    "PIng": [
+      {
+        "ING_ID": "104",
+        "ING_Name": "Lime Wedges",
+        "ING_Type": "Garnish"
+      },
+      {
+        "ING_ID": "28",
+        "ING_Name": "Sugar",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "82",
+        "ING_Name": "Cachaca",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "102",
+        "ING_Name": "Crushed Ice",
+        "ING_Type": "Garnish"
+      }
+    ]
+  },
+  {
+    "PID": 3,
+    "PName": "Pina Colada",
+    "PImage": "img/product_3.png",
+    "PCat": "Cocktail",
+    "PDesc": "A tropical blend of rich coconut cream, white rum and tangy pineapple \u2013 serve with an umbrella for kitsch appeal.",
+    "PHtm": "Add ice to the blender\nAdd pineapple juice coconut liqueurwhite rum to the blender\nBlend together\nStrain into the hurricane glass\nGarnish with cocktail cherry pinapple wedges",
+    "PIng": [
+      {
+        "ING_ID": "103",
+        "ING_Name": "White Rum",
+        "ING_Type": "Liquid"
+      },
+      {
+        "ING_ID": "48",
+        "ING_Name": "Coconut Milk",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "19",
+        "ING_Name": "Pineapple Juice",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "102",
+        "ING_Name": "Crushed Ice",
+        "ING_Type": "Garnish"
+      }
+    ]
+  }
+]

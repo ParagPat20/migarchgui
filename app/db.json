@@ -1,0 +1,526 @@
+[
+  {
+    "data": [
+      {
+        "ING_ID": "1",
+        "ING_Name": "Vodka",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "2",
+        "ING_Name": "Gin",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "3",
+        "ING_Name": "Rum",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "4",
+        "ING_Name": "Tequila",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "5",
+        "ING_Name": "Whiskey",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "6",
+        "ING_Name": "Bourbon",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "7",
+        "ING_Name": "Scotch",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "8",
+        "ING_Name": "Brandy",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "9",
+        "ING_Name": "Triple Sec",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "10",
+        "ING_Name": "Cointreau",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "11",
+        "ING_Name": "Campari",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "12",
+        "ING_Name": "Aperol",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "13",
+        "ING_Name": "Vermouth",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "14",
+        "ING_Name": "Sweet Vermouth",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "15",
+        "ING_Name": "Dry Vermouth",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "16",
+        "ING_Name": "Lemon Juice",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "17",
+        "ING_Name": "Lime Juice",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "18",
+        "ING_Name": "Orange Juice",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "19",
+        "ING_Name": "Pineapple Juice",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "20",
+        "ING_Name": "Cranberry Juice",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "21",
+        "ING_Name": "Grapefruit Juice",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "22",
+        "ING_Name": "Tomato Juice",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "23",
+        "ING_Name": "Simple Syrup",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "24",
+        "ING_Name": "Grenadine",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "25",
+        "ING_Name": "Bitters",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "26",
+        "ING_Name": "Mint Leaves",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "27",
+        "ING_Name": "Basil",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "28",
+        "ING_Name": "Sugar",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "29",
+        "ING_Name": "Salt",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "30",
+        "ING_Name": "Pepper",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "31",
+        "ING_Name": "Tabasco",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "32",
+        "ING_Name": "Worcestershire Sauce",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "33",
+        "ING_Name": "Club Soda",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "34",
+        "ING_Name": "Tonic Water",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "35",
+        "ING_Name": "Cola",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "36",
+        "ING_Name": "Ginger Ale",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "37",
+        "ING_Name": "Ginger Beer",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "38",
+        "ING_Name": "Soda Water",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "39",
+        "ING_Name": "Coconut Cream",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "40",
+        "ING_Name": "Heavy Cream",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "41",
+        "ING_Name": "Half and Half",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "42",
+        "ING_Name": "Egg White",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "43",
+        "ING_Name": "Egg Yolk",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "44",
+        "ING_Name": "Honey",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "45",
+        "ING_Name": "Agave Nectar",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "46",
+        "ING_Name": "Cinnamon",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "47",
+        "ING_Name": "Nutmeg",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "48",
+        "ING_Name": "Coconut Milk",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "49",
+        "ING_Name": "Espresso",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "50",
+        "ING_Name": "Coffee Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "51",
+        "ING_Name": "Orange Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "52",
+        "ING_Name": "Amaretto",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "53",
+        "ING_Name": "Irish Cream",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "54",
+        "ING_Name": "Peach Schnapps",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "55",
+        "ING_Name": "Blue Curacao",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "56",
+        "ING_Name": "Sour Mix",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "57",
+        "ING_Name": "Coconut Rum",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "58",
+        "ING_Name": "Spiced Rum",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "59",
+        "ING_Name": "Dark Rum",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "60",
+        "ING_Name": "Light Rum",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "61",
+        "ING_Name": "Gold Tequila",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "62",
+        "ING_Name": "Silver Tequila",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "63",
+        "ING_Name": "White Wine",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "64",
+        "ING_Name": "Red Wine",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "65",
+        "ING_Name": "Champagne",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "66",
+        "ING_Name": "Prosecco",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "67",
+        "ING_Name": "Sake",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "68",
+        "ING_Name": "Absinthe",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "69",
+        "ING_Name": "Anejo Rum",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "70",
+        "ING_Name": "Blackberry Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "71",
+        "ING_Name": "Cherry Brandy",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "72",
+        "ING_Name": "Chocolate Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "73",
+        "ING_Name": "Cranberry Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "74",
+        "ING_Name": "Ginger Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "75",
+        "ING_Name": "Hazelnut Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "76",
+        "ING_Name": "Melon Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "77",
+        "ING_Name": "Peppermint Schnapps",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "78",
+        "ING_Name": "Raspberry Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "79",
+        "ING_Name": "Strawberry Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "80",
+        "ING_Name": "Vanilla Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "81",
+        "ING_Name": "Benedictine",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "82",
+        "ING_Name": "Cachaca",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "83",
+        "ING_Name": "Calvados",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "84",
+        "ING_Name": "Curacao",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "85",
+        "ING_Name": "Drambuie",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "86",
+        "ING_Name": "Frangelico",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "87",
+        "ING_Name": "Galliano",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "88",
+        "ING_Name": "Gold Rum",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "89",
+        "ING_Name": "Herbsaint",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "90",
+        "ING_Name": "Kahlua",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "91",
+        "ING_Name": "Kirsch",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "92",
+        "ING_Name": "Luxardo",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "93",
+        "ING_Name": "Madeira",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "94",
+        "ING_Name": "Maraschino Liqueur",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "95",
+        "ING_Name": "Mezcal",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "96",
+        "ING_Name": "Midori",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "97",
+        "ING_Name": "Ouzo",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "98",
+        "ING_Name": "Pernod",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "99",
+        "ING_Name": "Pimm's No. 1",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "100",
+        "ING_Name": "Rye Whiskey",
+        "ING_Type": "Main"
+      },
+      {
+        "ING_ID": "101",
+        "ING_Name": "Ice",
+        "ING_Type": "Garnish"
+      },
+      {
+        "ING_ID": "102",
+        "ING_Name": "Crushed Ice",
+        "ING_Type": "Garnish"
+      },
+      {
+        "ING_ID": "103",
+        "ING_Name": "White Rum",
+        "ING_Type": "Liquid"
+      },
+      {
+        "ING_ID": "104",
+        "ING_Name": "Lime Wedges",
+        "ING_Type": "Garnish"
+      }
+    ]
+  }
+]
