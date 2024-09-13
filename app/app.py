@@ -18,8 +18,6 @@ def stop_kbd():
 
 
 
-
-
 class App(CTk):
     
     def __init__(self):
@@ -1638,7 +1636,7 @@ class App(CTk):
                 master=pb2,
                 variable=selected_pipe,
                 values=list(self.pipe_options.keys()),
-                width=250,
+                width=450,
                 height=46,
                 text_color=("#ffffff", "#ffffff"),
                 bg_color=("#111111", "#111111"),
