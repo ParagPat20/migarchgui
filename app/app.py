@@ -1038,10 +1038,10 @@ class App(CTk):
                 checkbox = CTkCheckBox(
                     master=self.box3,
                     text=ing_name,
-                    width=300,
+                    width=200,
                     height=40,
-                    checkbox_width=26,
-                    checkbox_height=26,
+                    checkbox_width=40,
+                    checkbox_height=40,
                     corner_radius=3,
                     border_width=1,
                     hover_color=("#8f0c04", "#8f0c04"),
