@@ -9,6 +9,7 @@ import serial
 from customtkinter import *
 from PIL import Image, ImageTk
 import subprocess
+import threading
 
 kbdstate = False
 
@@ -901,16 +902,12 @@ class App(CTk):
 
     # Bind focus events for this specific entry
         self.search_ingredients.bind("<FocusIn>", lambda event: start_kbd())
-        self.search_ingredients.bind("<FocusOut>", lambda event: stop_kbd())
 
         self.db_ing_name.bind("<FocusIn>", lambda event: start_kbd())
-        self.db_ing_name.bind("<FocusOut>", lambda event: stop_kbd())
 
         self.db_pl_name.bind("<FocusIn>", lambda event: start_kbd())
-        self.db_pl_name.bind("<FocusOut>", lambda event: stop_kbd())
 
         self.pr_search_ing.bind("<FocusIn>", lambda event: start_kbd())
-        self.pr_search_ing.bind("<FocusOut>", lambda event: stop_kbd())
 
 
     def load_products_from_json(self):
