@@ -1369,7 +1369,7 @@ class App(CTk):
             self.db_pl_img.configure(image=photo_image)
             self.db_pl_img.image = photo_image
 
-    def get_selected_ingredients():
+    def get_selected_ingredients(self):
         selected_ingredients = []
         for ing_id, state in self.selected_pr_ingredients.items():
             if state:
@@ -1384,7 +1384,7 @@ class App(CTk):
                     return item
         return None
 
-    def get_image_path():
+    def get_image_path(self):
         file_path = filedialog.askopenfilename()
         return file_path
         return filedialog.askopenfilename(
@@ -1406,14 +1406,14 @@ class App(CTk):
                     product_list = []
         pid = len(product_list) + 1
         pname = self.db_pl_name.get()
-        pimg = get_image_path()
+        pimg = self.get_image_path()
         pcategory = self.db_pl_cat.get()
         pdescription = self.db_pl_desc.get("1.0", "end-1c")
         phtm = self.db_pl_htm.get("1.0", "end-1c")
         pingredients = []
-        selected_ingredients = get_selected_ingredients()
+        selected_ingredients = self.get_selected_ingredients()
         for ing_id in selected_ingredients:
-            ingredient_details = get_ingredient_details(ing_id)
+            ingredient_details = self.get_ingredient_details(ing_id)
             if ingredient_details:
                 pingredients.append(
                     {
