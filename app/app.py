@@ -947,27 +947,29 @@ class App(CTk):
 
         row = 0
         col = 0
-        for product in self.products:
-            product_btn = CTkButton(
-                master=self.all_products_frame,
-                text=product["PName"],
-                image=CTkImage(Image.open(product["PImage"]), size=(200, 200)),
-                compound="top",
-                width=215,
-                height=250,
-                border_width=0,
-                border_spacing=0,
-                fg_color=("#000000", "#000000"),
-                bg_color=("#111111", "#111111"),
-                hover_color=("#8f0c04", "#8f0c04"),
-                font=CTkFont(family="Nunito", size=16, weight="normal"),
-                command=lambda p=product: self.send_product_serial_data(p),
-            )
-            product_btn.grid(row=row, column=col, padx=7, pady=7, sticky="nsew")
-            col += 1
-            if col >= 7:
-                col = 0
-                row += 1
+        def load(self):
+            for product in self.products:
+                product_btn = CTkButton(
+                    master=self.all_products_frame,
+                    text=product["PName"],
+                    image=CTkImage(Image.open(product["PImage"]), size=(200, 200)),
+                    compound="top",
+                    width=215,
+                    height=250,
+                    border_width=0,
+                    border_spacing=0,
+                    fg_color=("#000000", "#000000"),
+                    bg_color=("#111111", "#111111"),
+                    hover_color=("#8f0c04", "#8f0c04"),
+                    font=CTkFont(family="Nunito", size=16, weight="normal"),
+                    command=lambda p=product: self.send_product_serial_data(p),
+                )
+                product_btn.grid(row=row, column=col, padx=7, pady=7, sticky="nsew")
+                col += 1
+                if col >= 7:
+                    col = 0
+                    row += 1
+        threading.Thread(target=load(self)).start()
 
     def display_matching_products(self):
         for widget in self.search_product_frame.winfo_children():
@@ -1052,7 +1054,8 @@ class App(CTk):
                 col = 0
                 row += 1
 
-    def update_selected_count(self):
+    
+    def update_selected_count1(self):
         selected_count = sum(self.selected_ingredients.values())
         if selected_count > 9:
             for ing_id, checkbox in self.checkboxes:
@@ -1066,13 +1069,15 @@ class App(CTk):
         self.search_selected.configure(
             text=f"Selected Ingredients : {selected_count} / 10"
         )
+    def update_selected_count(self):
+        threading.Thread(target=self.update_selected_count1).start()
 
     def update_ingredient_list(self, event):
         filter_text = self.search_ingredients.get()
         self.display_ingredients(filter_text)
         self.restore_checkbox_states()
 
-    def restore_checkbox_states(self):
+    def restore_checkbox_states1(self):
         for ing_id, checkbox in self.checkboxes:
             if self.selected_ingredients.get(ing_id, False):
                 checkbox.select()
@@ -1082,6 +1087,8 @@ class App(CTk):
         self.search_selected.configure(
             text=f"Selected Ingredients : {selected_count} / 10"
         )
+    def restore_checkbox_states(self):
+        threading.Thread(target=self.restore_checkbox_states1).start()
 
     def clear_all_selections(self):
         for ing_id, checkbox in self.checkboxes:
