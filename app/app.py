@@ -11,10 +11,12 @@ from PIL import Image, ImageTk
 import subprocess
 
 def start_kbd():
-    subprocess.Popen(['bash', 'keyboardstart.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # subprocess.Popen(['bash', 'keyboardstart.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    print("KBD ON")
 
 def stop_kbd():
-    subprocess.Popen(['bash', 'keyboardstop.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # subprocess.Popen(['bash', 'keyboardstop.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    print("KBD OFF")
 
 
 
@@ -871,29 +873,18 @@ class App(CTk):
         self.pb_title.pack(side="left")
 
     # Bind focus events for this specific entry
-        self.search_ingredients.bind("<FocusIn>", self.check_focus)
-        self.search_ingredients.bind("<FocusOut>", self.check_focus)
+        self.search_ingredients.bind("<FocusIn>", start_kbd)
+        self.search_ingredients.bind("<FocusOut>", stop_kbd)
 
-        self.db_ing_name.bind("<FocusIn>", self.check_focus)
-        self.db_ing_name.bind("<FocusOut>", self.check_focus)
+        self.db_ing_name.bind("<FocusIn>", start_kbd)
+        self.db_ing_name.bind("<FocusOut>", stop_kbd)
 
-        self.db_pl_name.bind("<FocusIn>", self.check_focus)
-        self.db_pl_name.bind("<FocusOut>", self.check_focus)
+        self.db_pl_name.bind("<FocusIn>", start_kbd)
+        self.db_pl_name.bind("<FocusOut>", stop_kbd)
 
-        self.pr_search_ing.bind("<FocusIn>", self.check_focus)
-        self.pr_search_ing.bind("<FocusOut>", self.check_focus)
+        self.pr_search_ing.bind("<FocusIn>", start_kbd)
+        self.pr_search_ing.bind("<FocusOut>", stop_kbd)
 
-    def check_focus(self, event=None):
-        if self.search_ingredients.focus_get() == self.search_ingredients:
-            start_kbd()
-        elif self.db_ing_name.focus_get() == self.db_ing_name:
-            start_kbd()
-        elif self.db_pl_name.focus_get() == self.db_pl_name:
-            start_kbd()
-        elif self.pr_search_ing.focus_get() == self.pr_search_ing:
-            start_kbd()
-        else:
-            stop_kbd()
 
     def load_products_from_json(self):
         with open("products.json", "r") as file:
@@ -1397,7 +1388,7 @@ class App(CTk):
     def display_image(self, file_path):
         image = Image.open(file_path)
         image = image.resize((28, 28), Image.LANCZOS)
-        photo_image = ImageTk.PhotoImage(image)
+        photo_image = Image.PhotoImage(image)
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
             self.db_pl_img.configure(image=photo_image)
