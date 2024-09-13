@@ -984,27 +984,29 @@ class App(CTk):
             self.search_product_frame.grid_columnconfigure(col, weight=0)
         row = 0
         col = 0
-        for product in matching_products:
-            product_btn = CTkButton(
-                master=self.search_product_frame,
-                text=product["PName"],
-                image=CTkImage(Image.open(product["PImage"]), size=(200, 200)),
-                compound="top",
-                width=215,
-                height=250,
-                border_width=0,
-                border_spacing=0,
-                fg_color=("#000000", "#000000"),
-                bg_color=("#111111", "#111111"),
-                hover_color=("#8f0c04", "#8f0c04"),
-                font=CTkFont(family="Nunito", size=16, weight="normal"),
-                command=lambda p=product: self.send_product_serial_data(p),
-            )
-            product_btn.grid(row=row, column=col, padx=7, pady=7, sticky="nsew")
-            col += 1
-            if col >= 7:
-                col = 0
-                row += 1
+        def display(self):
+            for product in matching_products:
+                product_btn = CTkButton(
+                    master=self.search_product_frame,
+                    text=product["PName"],
+                    image=CTkImage(Image.open(product["PImage"]), size=(200, 200)),
+                    compound="top",
+                    width=215,
+                    height=250,
+                    border_width=0,
+                    border_spacing=0,
+                    fg_color=("#000000", "#000000"),
+                    bg_color=("#111111", "#111111"),
+                    hover_color=("#8f0c04", "#8f0c04"),
+                    font=CTkFont(family="Nunito", size=16, weight="normal"),
+                    command=lambda p=product: self.send_product_serial_data(p),
+                )
+                product_btn.grid(row=row, column=col, padx=7, pady=7, sticky="nsew")
+                col += 1
+                if col >= 7:
+                    col = 0
+                    row += 1
+        threading.Thread(target=display(self)).start()
 
     def load_data_from_json(self):
         with open("db.json", "r") as file:
@@ -1024,35 +1026,37 @@ class App(CTk):
         self.checkboxes = []
         row = 0
         col = 0
-        for ing in filtered_ingredients:
-            ing_id = ing["ING_ID"]
-            ing_name = ing["ING_Name"]
-            state = self.selected_ingredients.get(ing_id, False)
-            checkbox = CTkCheckBox(
-                master=self.box3,
-                text=ing_name,
-                width=200,
-                height=40,
-                checkbox_width=26,
-                checkbox_height=26,
-                corner_radius=3,
-                border_width=1,
-                hover_color=("#8f0c04", "#8f0c04"),
-                fg_color=("#e8000f", "#e8000f"),
-                font=CTkFont(family="Nunito", size=16, weight="normal"),
-                command=self.update_selected_count,
-                text_color=("#ffffff", "#ffffff"),
-            )
-            checkbox.grid(row=row, column=col, padx=5, pady=5)
-            if state:
-                checkbox.select()
-            else:
-                checkbox.deselect()
-            self.checkboxes.append((ing_id, checkbox))
-            col += 1
-            if col == 5:
-                col = 0
-                row += 1
+        def display(self):
+            for ing in filtered_ingredients:
+                ing_id = ing["ING_ID"]
+                ing_name = ing["ING_Name"]
+                state = self.selected_ingredients.get(ing_id, False)
+                checkbox = CTkCheckBox(
+                    master=self.box3,
+                    text=ing_name,
+                    width=200,
+                    height=40,
+                    checkbox_width=26,
+                    checkbox_height=26,
+                    corner_radius=3,
+                    border_width=1,
+                    hover_color=("#8f0c04", "#8f0c04"),
+                    fg_color=("#e8000f", "#e8000f"),
+                    font=CTkFont(family="Nunito", size=16, weight="normal"),
+                    command=self.update_selected_count,
+                    text_color=("#ffffff", "#ffffff"),
+                )
+                checkbox.grid(row=row, column=col, padx=5, pady=5)
+                if state:
+                    checkbox.select()
+                else:
+                    checkbox.deselect()
+                self.checkboxes.append((ing_id, checkbox))
+                col += 1
+                if col == 5:
+                    col = 0
+                    row += 1
+        threading.Thread(target=display(self)).start()
 
     
     def update_selected_count1(self):
