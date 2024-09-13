@@ -153,7 +153,7 @@ class App(CTk):
             hover_color=("#e8000f", "#e8000f"),
             border_spacing=0,
             font=CTkFont(family="Nunito", size=15, weight="bold"),
-            command=lambda event: togglekbd(),
+            command=togglekbd,
         )
         self.kbd.pack(padx=(0, 0), pady=(15, 0))
         
