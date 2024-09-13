@@ -874,8 +874,23 @@ class App(CTk):
         self.search_ingredients.bind("<FocusIn>", self.check_focus)
         self.search_ingredients.bind("<FocusOut>", self.check_focus)
 
+        self.db_ing_name.bind("<FocusIn>", self.check_focus)
+        self.db_ing_name.bind("<FocusOut>", self.check_focus)
+
+        self.db_pl_name.bind("<FocusIn>", self.check_focus)
+        self.db_pl_name.bind("<FocusOut>", self.check_focus)
+
+        self.pr_search_ing.bind("<FocusIn>", self.check_focus)
+        self.pr_search_ing.bind("<FocusOut>", self.check_focus)
+
     def check_focus(self, event=None):
         if self.search_ingredients.focus_get() == self.search_ingredients:
+            start_kbd()
+        elif self.db_ing_name.focus_get() == self.db_ing_name:
+            start_kbd()
+        elif self.db_pl_name.focus_get() == self.db_pl_name:
+            start_kbd()
+        elif self.pr_search_ing.focus_get() == self.pr_search_ing:
             start_kbd()
         else:
             stop_kbd()
