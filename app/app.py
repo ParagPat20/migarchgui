@@ -973,18 +973,19 @@ class App(CTk):
         threading.Thread(target=load(self)).start()
 
     def display_matching_products(self):
-        for widget in self.search_product_frame.winfo_children():
-            widget.destroy()
-        matching_products = self.find_matching_products()
-        if not matching_products:
-            messagebox.showerror(
-                "No Match Found", "No products match the selected ingredients."
-            )
-            return
-        for col in range(7):
-            self.search_product_frame.grid_columnconfigure(col, weight=0)
-        
         def display(self):
+            for widget in self.search_product_frame.winfo_children():
+                widget.destroy()
+            matching_products = self.find_matching_products()
+            if not matching_products:
+                messagebox.showerror(
+                    "No Match Found", "No products match the selected ingredients."
+                )
+                return
+            for col in range(7):
+                self.search_product_frame.grid_columnconfigure(col, weight=0)
+        
+        
             row = 0
             col = 0
             for product in matching_products:
@@ -1018,16 +1019,16 @@ class App(CTk):
         self.display_ingredients()
 
     def display_ingredients(self, filter_text=""):
-        for widget in self.box3.winfo_children():
-            widget.destroy()
-        filtered_ingredients = [
-            ing
-            for ing in self.ingredients
-            if filter_text.lower() in ing["ING_Name"].lower()
-        ]
-        self.checkboxes = []
-        
         def display(self):
+            for widget in self.box3.winfo_children():
+                widget.destroy()
+            filtered_ingredients = [
+                ing
+                for ing in self.ingredients
+                if filter_text.lower() in ing["ING_Name"].lower()
+            ]
+            self.checkboxes = []
+        
             row = 0
             col = 0
             for ing in filtered_ingredients:
@@ -1037,7 +1038,7 @@ class App(CTk):
                 checkbox = CTkCheckBox(
                     master=self.box3,
                     text=ing_name,
-                    width=200,
+                    width=300,
                     height=40,
                     checkbox_width=26,
                     checkbox_height=26,
