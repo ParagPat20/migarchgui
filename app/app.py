@@ -905,7 +905,7 @@ class App(CTk):
 
         self.db_ing_name.bind("<FocusIn>", lambda event: start_kbd())
 
-        self.db_pl_name.bind("<FocusIn>", lambda event: start_kbd())
+        # self.db_pl_name.bind("<FocusIn>", lambda event: start_kbd())
 
         self.pr_search_ing.bind("<FocusIn>", lambda event: start_kbd())
 
