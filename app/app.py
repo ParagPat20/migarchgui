@@ -10,12 +10,24 @@ from customtkinter import *
 from PIL import Image, ImageTk
 import subprocess
 
+kbdstate = False
+
 def start_kbd():
+    global kbdstate
     subprocess.Popen(['bash', 'keyboardstart.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    kbdstate = True
 
 def stop_kbd():
+    global kbdstate
     subprocess.Popen(['bash', 'keyboardstop.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    kbdstate = False
 
+def togglekbd():
+    global kbdstate
+    if kbdstate == False:
+        start_kbd()
+    else:
+        stop_kbd()
 
 
 class App(CTk):
@@ -141,7 +153,7 @@ class App(CTk):
             hover_color=("#e8000f", "#e8000f"),
             border_spacing=0,
             font=CTkFont(family="Nunito", size=15, weight="bold"),
-            command=stop_kbd,
+            command=lambda event: togglekbd(),
         )
         self.kbd.pack(padx=(0, 0), pady=(15, 0))
         
