@@ -55,6 +55,7 @@ class App(CTk):
         )
         self.frame1.pack_propagate(False)
         self.frame1.pack(padx=(10, 10), pady=(10, 0), fill="x")
+
         self.logo = CTkLabel(
             master=self.frame1,
             text="",
@@ -63,6 +64,7 @@ class App(CTk):
             image=CTkImage(Image.open(r"new-logo.png"), size=(300, 150)),
         )
         self.logo.pack(padx=(0, 0), pady=(0, 0))
+        
         self.frame2 = CTkFrame(
             master=self,
             bg_color=("#1f1f1f", "#1f1f1f"),
@@ -73,6 +75,7 @@ class App(CTk):
         )
         self.frame2.pack_propagate(False)
         self.frame2.pack(padx=(10, 0), pady=(10, 10), side="left", fill="both")
+
         self.tab1 = CTkButton(
             master=self.frame2,
             text="Find Cocktail",
@@ -128,6 +131,20 @@ class App(CTk):
             command=self.show_product_frame,
         )
         self.tab4.pack(pady=(8, 0))
+        self.kbd = CTkButton(
+            master=self.frame2,
+            text="KBD",
+            width=200,
+            height=50,
+            fg_color=("#8f0c04", "#8f0c04"),
+            bg_color=("#111111", "#111111"),
+            hover_color=("#e8000f", "#e8000f"),
+            border_spacing=0,
+            font=CTkFont(family="Nunito", size=15, weight="bold"),
+            command=stop_kbd,
+        )
+        self.kbd.pack(padx=(0, 0), pady=(15, 0))
+        
         self.frame3 = CTkFrame(
             master=self,
             bg_color=("#1f1f1f", "#1f1f1f"),
