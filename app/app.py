@@ -11,12 +11,10 @@ from PIL import Image, ImageTk
 import subprocess
 
 def start_kbd():
-    # subprocess.Popen(['bash', 'keyboardstart.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    print("KBD ON")
+    subprocess.Popen(['bash', 'keyboardstart.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def stop_kbd():
-    # subprocess.Popen(['bash', 'keyboardstop.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    print("KBD OFF")
+    subprocess.Popen(['bash', 'keyboardstop.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 
@@ -873,17 +871,17 @@ class App(CTk):
         self.pb_title.pack(side="left")
 
     # Bind focus events for this specific entry
-        self.search_ingredients.bind("<FocusIn>", start_kbd)
-        self.search_ingredients.bind("<FocusOut>", stop_kbd)
+        self.search_ingredients.bind("<FocusIn>", lambda event: start_kbd())
+        self.search_ingredients.bind("<FocusOut>", lambda event: stop_kbd())
 
-        self.db_ing_name.bind("<FocusIn>", start_kbd)
-        self.db_ing_name.bind("<FocusOut>", stop_kbd)
+        self.db_ing_name.bind("<FocusIn>", lambda event: start_kbd())
+        self.db_ing_name.bind("<FocusOut>", lambda event: stop_kbd())
 
-        self.db_pl_name.bind("<FocusIn>", start_kbd)
-        self.db_pl_name.bind("<FocusOut>", stop_kbd)
+        self.db_pl_name.bind("<FocusIn>", lambda event: start_kbd())
+        self.db_pl_name.bind("<FocusOut>", lambda event: stop_kbd())
 
-        self.pr_search_ing.bind("<FocusIn>", start_kbd)
-        self.pr_search_ing.bind("<FocusOut>", stop_kbd)
+        self.pr_search_ing.bind("<FocusIn>", lambda event: start_kbd())
+        self.pr_search_ing.bind("<FocusOut>", lambda event: stop_kbd())
 
 
     def load_products_from_json(self):
