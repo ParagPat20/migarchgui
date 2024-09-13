@@ -1,0 +1,5 @@
+pyserial
+customtkinter
+pillow
+json5
+tk
