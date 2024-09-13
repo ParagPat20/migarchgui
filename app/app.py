@@ -8,9 +8,20 @@ from tkinter import filedialog, messagebox
 import serial
 from customtkinter import *
 from PIL import Image, ImageTk
+import subprocess
+
+def start_kbd():
+    subprocess.Popen(['bash', 'keyboardstart.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+def stop_kbd():
+    subprocess.Popen(['bash', 'keyboardstop.sh'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+
 
 
 class App(CTk):
+    
     def __init__(self):
         super().__init__()
         self.selected_ingredients = {}
@@ -860,6 +871,16 @@ class App(CTk):
             font=CTkFont(family="Nunito", size=18, weight="bold"),
         )
         self.pb_title.pack(side="left")
+
+    # Bind focus events for this specific entry
+        self.search_ingredients.bind("<FocusIn>", self.check_focus)
+        self.search_ingredients.bind("<FocusOut>", self.check_focus)
+
+    def check_focus(self, event=None):
+        if self.search_ingredients.focus_get() == self.search_ingredients:
+            start_kbd()
+        else:
+            stop_kbd()
 
     def load_products_from_json(self):
         with open("products.json", "r") as file:
