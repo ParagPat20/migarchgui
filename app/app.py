@@ -6,6 +6,7 @@ from collections import OrderedDict
 from tkinter import filedialog, messagebox
 
 import serial
+from serial import Serial
 from customtkinter import *
 from PIL import Image, ImageTk
 import subprocess
