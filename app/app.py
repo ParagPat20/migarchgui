@@ -1887,11 +1887,8 @@ class App(CTk):
 
         print(f"Serial Data to be sent: {serial_data}")
         try:
-            ser = serial.Serial(
-                "/dev/ttyS0", 9600, timeout=1
-            )  # Adjust COM3 - /dev/ttyUSB0 - /dev/ttyS0 port and baud rate
-            ser.write(serial_data.encode("utf-8"))
-            ser.close()
+            with serial.Serial("/dev/serial0", 9600, timeout=1) as ser:  # Adjust port as needed
+                ser.write(serial_data.encode("utf-8"))
             messagebox.showinfo("Success", "Data sent successfully.")
         except serial.SerialException as e:
             messagebox.showerror("Serial Error", str(e))
@@ -1928,13 +1925,6 @@ class App(CTk):
                 "Selection Error", "No valid pipes selected for any ingredients."
             )
             return
-
-        product_id = product["PID"]
-        pipelines_str = ", ".join(
-            f"{pipe}" for ing_id, pipe in selected_pipelines.items()
-        )
-        serial_data = f"Product : {product_id}, Pipelines: {pipelines_str}"
-        self.send_serial_data(serial_data)
 
 
 set_default_color_theme("dark-blue")
