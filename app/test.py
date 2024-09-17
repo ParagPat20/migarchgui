@@ -1,8 +1,9 @@
 import serial
+from serial import Serial
 import time
 
 # Configure the serial port
-ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
+ser = Serial('/dev/ttyUSB0', 9600, timeout=1)
 time.sleep(2)  # Wait for the connection to establish
 
 # Function to send data to Arduino
