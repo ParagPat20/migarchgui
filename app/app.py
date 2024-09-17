@@ -1818,6 +1818,8 @@ class App(CTk):
             )
             return
         self.show_search_product_frame(reset_search=False)
+        
+
 
     def show_product_selection_popup(self, matching_products, selected_pipelines):
         popup = tkinter.Toplevel()
