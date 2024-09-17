@@ -1921,11 +1921,20 @@ class App(CTk):
                     return
                 selected_pipelines[ing_id] = self.pipe_options.get(pipe_selection)
 
+
         if not selected_pipelines:
             messagebox.showerror(
                 "Selection Error", "No valid pipes selected for any ingredients."
             )
             return
+        
+        product_id = product["PID"]
+        pipelines_str = ", ".join(
+            f"{pipe}" for ing_id, pipe in selected_pipelines.items()
+        )
+        serial_data = f"Product : {product_id}, Pipelines: {pipelines_str}"
+        self.send_serial_data(serial_data)
+
 
 
 set_default_color_theme("dark-blue")
