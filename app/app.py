@@ -1887,7 +1887,7 @@ class App(CTk):
 
         print(f"Serial Data to be sent: {serial_data}")
         try:
-            with serial.Serial("/dev/serial0", 9600, timeout=1) as ser:  # Adjust port as needed
+            with serial.Serial("/dev/ttyUSB0", 9600, timeout=1) as ser:  # Adjust port as needed
                 ser.write(serial_data.encode("utf-8"))
             messagebox.showinfo("Success", "Data sent successfully.")
         except serial.SerialException as e:
