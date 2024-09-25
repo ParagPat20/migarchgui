@@ -18,31 +18,29 @@ stop_keyboard() {
     fi
 }
 
-# Monitor focus changes using xprop
+# Monitor focus changes
 while true; do
-    # Get the current focused window ID
-    FOCUSED_WINDOW_HEX=$(xprop -root _NET_ACTIVE_WINDOW | awk '{print $NF}')
-    
-    # Ensure the window ID is valid
-    if [[ "$FOCUSED_WINDOW_HEX" != "0x0" ]] && [[ -n "$FOCUSED_WINDOW_HEX" ]]; then
-        FOCUSED_WINDOW=$(printf "%d\n" "$FOCUSED_WINDOW_HEX")
-        
-        # Check if the focused window is valid and has input fields (like a text box)
-        if xprop -id "$FOCUSED_WINDOW" | grep -q "WM_CLASS"; then
-            if xprop -id "$FOCUSED_WINDOW" | grep -q "input"; then
-                echo "Input field focused."
-                start_keyboard
-            else
-                echo "No input field focused."
-                stop_keyboard
-            fi
+    # Get the currently focused window
+    FOCUSED_WINDOW=$(xdotool getwindowfocus)
+
+    # Get the window class to check what kind of application is focused
+    WIN_CLASS=$(xprop -id "$FOCUSED_WINDOW" WM_CLASS)
+
+    # If a terminal is focused, trigger the keyboard
+    if [[ "$WIN_CLASS" =~ "Terminal" ]] || [[ "$WIN_CLASS" =~ "XTerm" ]]; then
+        echo "Terminal window focused."
+        start_keyboard
+    else
+        # For other windows, check if they support text input
+        if xprop -id "$FOCUSED_WINDOW" | grep -q "input"; then
+            echo "Text input field detected."
+            start_keyboard
         else
+            echo "No input field detected."
             stop_keyboard
         fi
-    else
-        stop_keyboard
     fi
-    
-    # Polling every second
+
+    # Poll every second
     sleep 1
 done
